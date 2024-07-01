@@ -17,5 +17,6 @@ class AppTest {
     void oneOrOther() {
         App classUnderTest = new App();
         classUnderTest.oneOrOther(true);
+        assertNull(new App());
     }
 }
