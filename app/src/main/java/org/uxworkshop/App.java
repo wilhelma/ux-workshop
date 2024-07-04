@@ -3,18 +3,26 @@
  */
 package org.uxworkshop;
 
+/**
+ * Represents an application.
+ */
 public class App {
-    public String getGreeting() {
-        //TODO: a todo
-        return "Hello World";
+    public String getGreeting(String greeting) {
+        return greeting;
     }
 
+    /**
+     * The main method.
+     */
     public static void main(String[] args) {
         App app = new App();
-        System.out.println(app.getGreeting());
+        System.out.println(app.getGreeting("Hello World!"));
         app.oneOrOther(true);
     }
 
+    /**
+     * Prints depending on the choice.
+     */
     public void oneOrOther(boolean choice) {
         if(choice) {
             System.out.println("Choice!");
