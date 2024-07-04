@@ -7,8 +7,9 @@ package org.uxworkshop;
  * Represents an application.
  */
 public class App {
-    public String getGreeting(String greeting) {
-        return greeting;
+    public String getGreeting() {
+        // TODO: a new finding
+        return "Hello World!";
     }
 
     /**
@@ -16,7 +17,7 @@ public class App {
      */
     public static void main(String[] args) {
         App app = new App();
-        System.out.println(app.getGreeting("Hello World!"));
+        System.out.println(app.getGreeting());
         app.oneOrOther(true);
     }
 
