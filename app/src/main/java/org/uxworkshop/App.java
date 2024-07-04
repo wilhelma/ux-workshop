@@ -8,7 +8,7 @@ package org.uxworkshop;
  */
 public class App {
     public String getGreeting() {
-        // TODO: a new finding
+        // TODO: a new finding 2
         return "Hello World!";
     }
 
