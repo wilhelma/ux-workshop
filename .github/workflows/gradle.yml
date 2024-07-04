@@ -9,9 +9,9 @@ name: Java CI with Gradle
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "**" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "**" ]
 
 jobs:
   build:
@@ -35,6 +35,19 @@ jobs:
 
     - name: Build with Gradle Wrapper
       run: ./gradlew build
+
+    - name: Upload coverage to Teamscale
+      if: always() && github.event_name == 'push'
+      uses: cqse/teamscale-upload-action@v9.2.1
+      with:
+        server: 'https://ts-perf.cqse.eu'
+        project: 'ux-workshop'
+        user: wilhelma
+        accesskey: WTuYRUfhc6BpHhdwAEs1RCh1FXRJzClS
+        partition: 'Coverage'
+        format: 'JACOCO'
+        message: 'Linux Coverage'
+        files: '**/jacocoTestReport.xml'
 
     # NOTE: The Gradle Wrapper is the default and recommended way to run Gradle (https://docs.gradle.org/current/userguide/gradle_wrapper.html).
     # If your project does not have the Gradle Wrapper configured, you can use the following configuration to run Gradle with a specified version.
