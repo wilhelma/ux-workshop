@@ -34,7 +34,7 @@ jobs:
 
     - name: Configure JFrog CLI
       run: |
-        jfrog config add uxworkshop --url https://uxworkshop.jfrog.io/artifactory --user wilhelm@cqse.eu --password cmVmdGtuOjAxOjE3NTE2MjY2Nzc6a0p2d3dYQW9ZRGw5M2dVc0xjeGgwS1ZyS3dD --interactive=false
+        jfrog config add uxworkshop --url https://uxworkshop.jfrog.io --user wilhelm@cqse.eu --password cmVmdGtuOjAxOjE3NTE2MjY2Nzc6a0p2d3dYQW9ZRGw5M2dVc0xjeGgwS1ZyS3dD --interactive=false
         
     - name: Get branch name
       run: echo "BRANCH_NAME=$(echo ${GITHUB_REF#refs/heads/})" >> $GITHUB_ENV
